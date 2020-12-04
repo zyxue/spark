@@ -285,11 +285,6 @@ class UDFRegistration(object):
             >>> spark.sql("SELECT stringLengthInt('test')").collect()
             [Row(stringLengthInt(test)=4)]
 
-            >>> from pyspark.sql.types import IntegerType
-            >>> _ = spark.udf.register("stringLengthInt", lambda x: len(x), IntegerType())
-            >>> spark.sql("SELECT stringLengthInt('test')").collect()
-            [Row(stringLengthInt(test)=4)]
-
         2. When `f` is a user-defined function (from Spark 2.3.0):
 
             Spark uses the return type of the given user-defined function as the return type of
